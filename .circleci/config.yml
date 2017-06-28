@@ -1,0 +1,25 @@
+version: 2
+
+jobs:
+  checkout_code:
+    docker:
+      - image: circleci/golang:1.8
+    working_directory: /
+    steps:
+      - checkout
+  run_tests:
+    docker:
+      - image: circleci/golang:1.8
+    working_directory: /
+    steps:
+      - exit 1
+      
+workflows:
+  version: 2
+
+  build_test:
+    jobs:
+      - checkout_code
+      - run_tests:
+          requires:
+            - checkout_code
