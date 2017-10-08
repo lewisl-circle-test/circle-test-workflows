@@ -17,9 +17,13 @@ jobs:
       - exit 1
       
 workflows:
-  version: 2
-
+  version: scheduled-workflows-mvp
   build_test:
+    triggers:
+      - type: scheduled
+        frequency: "5 9 * * * ?"
+        branches:
+          - master
     jobs:
       - checkout_code
       - run_tests:
