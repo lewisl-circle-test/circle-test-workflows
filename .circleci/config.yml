@@ -1,6 +1,6 @@
 version: 2
 
-#test 
+
 
 jobs:
   checkout_code:
@@ -20,7 +20,7 @@ workflows:
   build_test:
     triggers:
       - type: scheduled
-        frequency: "5 9 * * * ?"
+        frequency: "0 5 9 * * *"
         branches:
           - master
     jobs:
