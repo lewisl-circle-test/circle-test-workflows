@@ -6,7 +6,6 @@ jobs:
   checkout_code:
     docker:
       - image: circleci/golang:1.8
-    working_directory: /
     steps:
       - checkout
   run_tests:
