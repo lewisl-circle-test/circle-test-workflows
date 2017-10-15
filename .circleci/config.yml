@@ -19,8 +19,9 @@ workflows:
     triggers:
       - type: scheduled
         frequency: "5 16 * * *"
-        branches:
-          - master
+        filters:
+          branches:
+            - master
     jobs:
       - checkout_code
       - run_tests:
