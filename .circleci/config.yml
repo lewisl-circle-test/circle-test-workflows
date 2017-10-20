@@ -17,11 +17,10 @@ workflows:
   version: scheduled-workflows-mvp
   build_test:
     triggers:
-      - type: scheduled
-        frequency: "5 16 * * *"
-        filters:
-          branches:
-            - master
+      - type: schedule
+        cron: "5 16 * * *"
+        branches:
+          - master
     jobs:
       - checkout_code
       - run_tests:
